@@ -18,16 +18,17 @@ Each file has:
 | 128 | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | Hashing | Medium | [0128_LongestConsecutiveSequence.java](01-hashing/0128_LongestConsecutiveSequence.java) | 2026-11-19 |
 | 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Prefix Sum | Medium | [0238_ProductOfArrayExceptSelf.java](02-prefix-sum/0238_ProductOfArrayExceptSelf.java) | 2026-11-20 |
 | 347 | [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) | Heap | Medium | [0347_TopKFrequentElements.java](03-heap/0347_TopKFrequentElements.java) | 2026-11-19 |
+| 560 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | Prefix Sum | Medium | [0560_SubarraySumEqualsK.java](02-prefix-sum/0560_SubarraySumEqualsK.java) | 2026-11-22 |
 | 724 | [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) | Prefix Sum | Easy | [0724_FindPivotIndex.java](02-prefix-sum/0724_FindPivotIndex.java) | 2026-11-19 |
 
-**Total: 6** (Easy 2 · Medium 4 · Hard 0)
+**Total: 7** (Easy 2 · Medium 5 · Hard 0)
 
 ## Patterns learned
 
 | Folder | Pattern | Trigger → trick |
 |--------|---------|-----------------|
 | [01-hashing](01-hashing) | Hashing | "Have I seen X before?" / grouping / O(1) lookup → HashMap or HashSet. Pair sum → look for the complement; anagrams → sorted word as key; consecutive run → start only where `x-1` is missing. |
-| [02-prefix-sum](02-prefix-sum) | Prefix Sum | "Sum of a left part vs right part / a range" → keep a running sum; `right = total - left - nums[i]`. "Everything except me" → prefix and suffix running products (start at 1, use the running value before including the current element, no division). |
+| [02-prefix-sum](02-prefix-sum) | Prefix Sum | "Sum of a left part vs right part / a range" → keep a running sum; `right = total - left - nums[i]`. "Everything except me" → prefix and suffix running products (start at 1, use the running value before including the current element, no division). "Count subarrays with sum = k" (negatives allowed) → prefix sum + HashMap of prefix counts seeded `{0: 1}`, look up `sum - k` before storing `sum` (Two Sum on prefix sums). |
 | [03-heap](03-heap) | Heap | "Top / smallest / most frequent k" → min-heap of size k (pop when size > k), or bucket sort for O(n). |
 
 ## Run it
