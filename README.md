@@ -21,8 +21,9 @@ Each file has:
 | 443 | [String Compression](https://leetcode.com/problems/string-compression/) | Two Pointers | Medium | [0443_StringCompression.java](04-two-pointers/0443_StringCompression.java) | 2026-11-24 |
 | 560 | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | Prefix Sum | Medium | [0560_SubarraySumEqualsK.java](02-prefix-sum/0560_SubarraySumEqualsK.java) | 2026-11-22 |
 | 724 | [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/) | Prefix Sum | Easy | [0724_FindPivotIndex.java](02-prefix-sum/0724_FindPivotIndex.java) | 2026-11-19 |
+| 1481 | [Least Number of Unique Integers after K Removals](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/) | Greedy | Medium | [1481_LeastNumberOfUniqueIntegersAfterKRemovals.java](05-greedy/1481_LeastNumberOfUniqueIntegersAfterKRemovals.java) | 2026-11-24 |
 
-**Total: 8** (Easy 2 · Medium 6 · Hard 0)
+**Total: 9** (Easy 2 · Medium 7 · Hard 0)
 
 ## Patterns learned
 
@@ -32,6 +33,7 @@ Each file has:
 | [02-prefix-sum](02-prefix-sum) | Prefix Sum | "Sum of a left part vs right part / a range" → keep a running sum; `right = total - left - nums[i]`. "Everything except me" → prefix and suffix running products (start at 1, use the running value before including the current element, no division). "Count subarrays with sum = k" (negatives allowed) → prefix sum + HashMap of prefix counts seeded `{0: 1}`, look up `sum - k` before storing `sum` (Two Sum on prefix sums). |
 | [03-heap](03-heap) | Heap | "Top / smallest / most frequent k" → min-heap of size k (pop when size > k), or bucket sort for O(n). |
 | [04-two-pointers](04-two-pointers) | Two Pointers | "Modify / compress in place, O(1) space" → read pointer walks each consecutive group, write pointer `w` writes the result behind it (safe because the output never grows past the input). |
+| [05-greedy](05-greedy) | Greedy | "Remove / spend k to minimise or maximise something" → take the cheapest option first. Distinct count after k removals → count, sort the frequencies (not the values), remove the smallest ones first. |
 
 ## Run it
 
